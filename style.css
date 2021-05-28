@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .encabezado {
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 8;
+  }
+  .encabezado .titulo {
+    text-align: center;
+  }
+  .encabezado .menu {
+    color: white;
+    background-color: black;
+  }
+  .encabezado .menu .navbar-nav {
+    width: 100%;
+  }
+  .encabezado .menu .navbar-nav .nav-link {
+    color: white;
+    margin: 0 auto;
+  }
+  
+  .cart-hide {
+    display: none;
+  }
+  
+  
+  .cart-container {
+    text-align: center;
+    position: fixed;
+    top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #d1cdcd;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  .cart-container .btn-close {
+    margin: 2px 2px 10px auto;
+    padding: 10px;
+  }
+  .cart-container .cart-title {
+    display: flex;
+    
+  }
+  
+  .cart-container .cart-title h2 {
+    margin: 0 auto;
+  }
+  .cart-container .cart {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  
+  }
+  .productInCart {
+    margin: 20px auto;
+    text-align: left;
+    width: 300px;
+  }
+
+  #allproducts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto
+
+  }
+  #title {
+      align-items: center;
+      text-align: center;
+      font-size: 35px;
+      font-weight: bolder;
+  }
+
+  .item {
+    margin: 20px auto;
+    width: 330px;
+  
+
+  }
+  .item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  .offers {
+    text-align: center;
+  }
+  .offers .offer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .offers .offer-container .offer-item {
+    margin: 20px auto;
+    width: 330px;
+  
+  }
+  .offers .offer-container .offer-item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  .equipment-for-crossfit {
+    text-align: center;
+  }
+  .equipment-for-crossfit .cf-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .equipment-for-crossfit .cf-container .cf-item {
+    margin: 20px auto;
+    width: 330px;
+  
+  }
+  .equipment-for-crossfit .cf-container .cf-item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  .barbells {
+    text-align: center;
+  }
+  .barbells .bb-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .barbells .bb-container .bb-item {
+    
+    margin: 20px auto;
+    width: 330px;
+  }
+  .barbells .bb-container .bb-item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  .plates {
+    text-align: center;
+  }
+  .plates .plates-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .plates .plates-container .pt-item {
+  
+    margin: 20px auto;
+    width: 330px;
+  }
+  .plates .plates-container .pt-item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  .rigs-and-racks {
+    text-align: center;
+  }
+  .rigs-and-racks .rr-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .rigs-and-racks .rr-container .rr-item {
+    
+    margin: 20px auto;
+    width: 330px;
+  }
+  .rigs-and-racks .rr-container .rr-item .article-detail {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+  
+    .btn-add, .btn-delete {
+      border-radius: 4px;
+      color: white;
+      background-color: #d10000;
+      padding: 2px;
+      font-weight: bolder;
+  }
+  
+  .contact {
+    text-align: center;
+    background-color: black;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .contact h3 {
+    color: white;
+  }
+  .contact form {
+  margin: 0 auto;
+  }
+  .contact form div {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .contact form div label {
+    margin: 0 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: white;
+  }
+  .contact form div input {
+    margin: 0 10px;
+    font-family: "Times New Roman", Times, serif;
+    width: 200px;
+  }
+  
+  .blog {
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    background-color: #d10000;
+    color: white;
+    border-radius: 5px;
+  }
+  .comment-container {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .comment {
+    width: 50%;
+    text-align: justify;
+  }
+  
+  .detail {
+    font-weight: bolder;
+  }
+  
+  .btn-arrow {
+    width: 25px;
+    height: 20px;
+  }
+  .contact-blog { 
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    margin: 20px auto;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    
+  }
+  footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    
+  }
+  footer a:hover {
+    color:rgb(135, 94, 4)
+    
+  }
+  
+  
+  
+  @media only screen and (max-width: 590px) {
+    
+    .carrusel-container {
+      margin-top: 128px;
+    }
+    .contact-blog {
+      flex-direction: column;
+    }
+    .blog, .contact {
+      width: 90%;
+      margin: 20px auto;
+    }
+    #allproducts {
+        width: 100%;
+    }
+  
+  
+  }
+
+  

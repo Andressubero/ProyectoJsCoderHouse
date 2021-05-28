@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+    <link rel="stylesheet" href="style.css">
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+    
+    <title>Fitness Equipment</title>
+  </head>
+
+  <body>
+
+
+    <section class="encabezado">
+
+        <div class="titulo">
+            <h1> Fitness Equipment </h1>
+        </div>
+        <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" ><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  </button></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a id="option-all" class="nav-link fs-4"  href="">All</a>
+                      <a id="option-cf" class="nav-link fs-4" href="">Equipment for CrossFit</a>
+                      <a id="option-bb" class="nav-link fs-4 " href="" >Barbells</a>
+                      <a id="option-pt" class="nav-link fs-4" href="">Plates</a>
+                      <a id="option-rr" class="nav-link fs-4" href="">Rigs and Racks</a>
+                      <a id="option-offer" class="nav-link fs-4 " href="" >Offers</a>
+                      <a  class="nav-link fs-4 " href="#contact">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+
+      </section>
+
+
+  <div class="carrusel-container">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./images/img1.jpg" class="d-block w-100" alt="barbell">
+              <div class="carousel-caption d-none d-md-block">
+                <h2 class=" fw-bold ">Barbell for Weightlifting, Powerlifting and CrossFit.</h2>
+                <p class=" fs-4 fw-bold">We have the best Barbells for you. Click on Barbells and to watch all the models.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./images/img2.jpg" class="d-block w-100" alt="Kettebells">
+              <div class="carousel-caption d-none d-md-block">
+                <h2 class="fw-bold text-white ">Kettebells</h2>
+                <p class="fs-4 fw-bold"> Click on Equipment for CrossFit to watch all the Weights.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./images/img3.jpg" class="d-block w-100" alt="Home Gym">
+              <div class="carousel-caption d-none d-md-block">
+                <h2  class="fw-bold">Find all you need to your home Gym</h2>
+                <p class="fs-4 fw-bold"> If You train Seriusly, you have a home gym.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-shopping-cart" aria-hidden="true"></i></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id='cart'class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <div class="detail">TOTAL:<span id="preciototal"></span></div>
+        <button type="button" id="deleteall" class="btn btn-secondary" data-bs-dismiss="modal">Delete All</button>
+        <button type="button"  class="btn btn-primary">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+       <!-- <div id="cart-container" class="cart-container cart-hide"> 
+         <div class="btn-close" ><button class="btn-delete" id="btn-cart-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button> </div>
+        <div class="cart-title"><h2><i class="fa fa-shopping-cart" aria-hidden="true"></i></h2></div>
+        
+        <div id="cart" class="cart">
+          
+        </div>
+        <div class="detail">TOTAL:<span id="preciototal"></span> </div>
+        <div class="detail"> <button class="btn-add" id="buy">Buy</button>  <button class="btn-add" id="deleteall">Delete All</button></div>
+        
+    </div>  -->
+   
+      <div id="title"></div>
+      
+      
+      <section id="allproducts"></section>
+    
+      
+      
+
+    
+
+
+    <section class="contact-blog">
+
+      <section class="contact" id="contact">
+
+        
+     <h3>Enter your contact details</h3>
+
+        <form action="POST">
+          <div>
+            <label class="label-form" for="nombre">Name:</label>
+            <input type="text" id="nombre" class="input-form">
+        </div>
+        <div>
+          <label class="label-form" for="telefono">Phone:</label>
+          <input type="number" name="telefono" id="telefono" class="input-form">
+      </div>
+        <div >
+          <label class="label-form" for="email">Email:</label>
+          <input  type="email" name="email" id="email" class="input-form">
+      </div>
+       
+      <button class="btn-add">Submit</button>
+
+        </form>
+
+      </section>
+
+
+      <section class="blog" id="blog">
+        
+           <h3>Comment from our satisfied customers</h3>
+        <div class="comment-container"> 
+          <div id="btn-back" class="cart-hide btn-arrow"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></div>
+        <div class="comment" id="comment">
+
+        </div>
+        <div id="btn-next" class="btn-arrow"> <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i> </div>
+        </div>
+        
+       
+
+      </section>
+
+      </section>
+
+     <footer>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.youtube.com/">Youtube</a>
+        <a href="https://twitter.com/">Twitter</a>
+     </footer>
+       
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
