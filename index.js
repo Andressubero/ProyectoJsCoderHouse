@@ -451,7 +451,6 @@ class user {
         this.email = email;
 
     } ;
-   
     
 }
 
@@ -471,6 +470,10 @@ btnSubmit.onclick = (e) => {
             let person = new user (userName.value, userPhone.value,userEmail.value)
             users.push(person)
              localStorage.setItem("users", JSON.stringify(users))
+             userName.value =""
+             userEmail.value =""
+             userPhone.value =""
+             alert("We will contact you")
 
         }
         
