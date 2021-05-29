@@ -274,6 +274,7 @@ let plates = [
      totalPrice()
      
  }
+
  
  let cartList = document.getElementById('cart')
  
@@ -297,22 +298,17 @@ let plates = [
              addToCart(item.id)
          }
         
-        totalPrice()
-         
-        
-       
+        totalPrice()     
          
      } )
      
  }
 
-    const totalPrice = function () {
+const totalPrice = function () {
     let precioTotal = document.getElementById('preciototal')
     precioTotal.innerHTML= `${Cart.reduce( (acc,item)=> acc += item.price * item.cantidad, 0 )}$`
 
  }
- 
- 
  
  
  let btnDeleteAll = document.getElementById("deleteall")
@@ -354,7 +350,7 @@ let plates = [
  btnNext.onclick = function() {
      postId++
      llamarApi()  
-     btnBack.classList.remove("cart-hide")
+     btnBack.classList.remove("div-hide")
  }
  
  let btnBack = document.getElementById('btn-back')
@@ -364,14 +360,12 @@ let plates = [
      if (postId === 0) {
          comment.innerHTML = '<span class= "detail">If you are thinking yet about buy our products, you can read the costumers reviews about their products and the purchasing process</span>'
      
-         btnBack.classList.add("cart-hide")
+         btnBack.classList.add("div-hide")
  
      } else { 
          
          llamarApi()
      }
-     
- 
  
  }
 
@@ -446,6 +440,43 @@ let optionAll = document.getElementById('option-all')
 optionAll.onclick = function (e) {
     e.preventDefault()
     showProducts( allProducts, "All Products")
+}
+
+const users = []
+
+class user {
+    constructor (name, phone, email) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+
+    } ;
+   
+    
+}
+
+const btnSubmit = document.getElementById('btn-submit')
+btnSubmit.onclick = (e) => {
+    e.preventDefault()
+    let userName = document.getElementById('name')
+    let userEmail = document.getElementById('email')
+    let userPhone = document.getElementById('phone')
+    if((userName.value === "") || (userEmail.value === "")|| (userPhone.value === "")) {
+        alert("You have to complete all the info")
+    } else  { 
+        let repeatUser = users.find(person => person.email === userEmail.value)
+        if(repeatUser) {
+            alert("There is another person registered with this email")
+        } else {
+            let person = new user (userName.value, userPhone.value,userEmail.value)
+            users.push(person)
+             localStorage.setItem("users", JSON.stringify(users))
+
+        }
+        
+
+    }
+
 }
 
 
