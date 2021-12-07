@@ -1,14 +1,11 @@
-let plates = [ 
-    
+let plates = [  
     {    
-         img:"./images/greenplate2.jpg",
-         name: "2.5 lb Green Plate",
-         features: `<ul><li>Weight: 2.5 lb</li><li>Color: Green</li><li>Brand: Rogue</li></ul> `,
+        img:"./images/greenplate2.jpg",
+        name: "2.5 lb Green Plate",
+        features: `<ul><li>Weight: 2.5 lb</li><li>Color: Green</li><li>Brand: Rogue</li></ul> `,
         price: 1363,
           id: 1,
-         },
- 
-     
+         },   
  
      {
          img: './images/blueplate2.jpg',
@@ -16,7 +13,6 @@ let plates = [
          features: `<ul><li>Weight: 5 lb</li><li>Color: Blue</li><li>Brand: Rogue</li></ul> `,
          price: 2730,
          id: 2,
- 
      },
      {
          img: './images/whiteplate.jpg',
@@ -24,7 +20,6 @@ let plates = [
          features: `<ul><li>Weight: 10 lb</li><li>Color: White</li><li>Brand: Rogue</li></ul> `,
          price: 5450,
          id: 3 ,
- 
      },
      {
          img: './images/greenplate.jpg',
@@ -32,10 +27,8 @@ let plates = [
          features: `<ul><li>Weight: 25 lb</li><li>Color: Green</li><li>Brand: Rogue</li></ul> `,
          price: 13640,
          id: 4,
- 
      },
-     {
-         
+     { 
          img: './images/yellowplate.jpg',
          name: "35 lb Yellow Plate",
          features: `<ul><li>Weight: 35 lb</li><li>Color: Yellow</li><li>Brand: Rogue</li></ul> `,
@@ -49,7 +42,6 @@ let plates = [
          features: `<ul><li>Weight: 45 lb</li><li>Color: Blue</li><li>Brand: Rogue</li></ul> `,
          price: 24546,
          id : 6,
- 
      },
      {
          img: './images/redplate.jpg',
@@ -57,11 +49,9 @@ let plates = [
          features: `<ul><li>Weight: 55 lb</li><li>Color: Red</li><li>Brand: Rogue</li></ul> `,
          price: 30000,
          id : 7 ,
- 
      }
  ]
- 
- 
+
  let CFitems = [
  
      {
@@ -258,32 +248,24 @@ let plates = [
  }
  
     
- const deleteFromCart = function (id) {
-     
-     let product = Cart.find((item) => item.id===id)
+ const deleteFromCart = function (id) { 
+    let product = Cart.find((item) => item.id===id)
     product.cantidad -= 1
-    
      if (product.cantidad  === 0) {
-          let indice =  Cart.indexOf(product) 
-     Cart.splice(indice, 1) 
+        let indice =  Cart.indexOf(product) 
+        Cart.splice(indice, 1) 
     }
      localStorage.setItem("Cart", JSON.stringify(Cart))
      let CartLS = JSON.parse(localStorage.getItem("Cart")) 
      console.log(CartLS)
      paintCart()
-     totalPrice()
-     
+     totalPrice()  
  }
 
- 
- let cartList = document.getElementById('cart')
- 
- 
+ let cartList = document.getElementById('cart') 
  const paintCart = function() {
- 
      cartList.innerHTML=''
      const paint = Cart.forEach( (item) => {
- 
          let productInCart = document.createElement('div')
          productInCart.className = 'productInCart'
          productInCart.innerHTML = `<div class= "detail"><span class= "detail">Product: </span>${item.name} <Br> <span class= "detail">Amount: </span> ${item.cantidad} <button class="btn-delete" id='btn-add-${item.id}'><i class="fa fa-plus" aria-hidden="true"></i></button> <button class="btn-delete" id='btn-quite-${item.id}'><i class="fa fa-minus-circle" aria-hidden="true"></i></button><Br><span class= "detail">Price: </span>  ${item.price * item.cantidad}$<Br>`
@@ -291,17 +273,13 @@ let plates = [
          let btnQuit = document.getElementById(`btn-quite-${item.id}`)
          btnQuit.onclick = function () {
              deleteFromCart(item.id)
-     
          }
          let btnAdd = document.getElementById(`btn-add-${item.id}`)
          btnAdd.onclick = function () {
-             addToCart(item.id)
+            addToCart(item.id)
          }
-        
-        totalPrice()     
-         
-     } )
-     
+        totalPrice()      
+     } ) 
  }
 
 const totalPrice = function () {
@@ -309,8 +287,7 @@ const totalPrice = function () {
     precioTotal.innerHTML= `${Cart.reduce( (acc,item)=> acc += item.price * item.cantidad, 0 )}$`
 
  }
- 
- 
+
  let btnDeleteAll = document.getElementById("deleteall")
  btnDeleteAll.onclick = () => {
      Cart.length = 0
@@ -320,32 +297,18 @@ const totalPrice = function () {
      totalPrice()
      paintCart()
  }
- 
- 
-              
+               
  let postId = 0
- 
  let comment = document.getElementById('comment')
- 
  comment.innerHTML = 'If you are thinking yet about buy our products, you can read the costumers reviews about their products and the purchasing process'
- 
  const llamarApi = () => {
-      
-      fetch(`https://jsonplaceholder.typicode.com/comments/${postId}`)
+    fetch(`https://jsonplaceholder.typicode.com/comments/${postId}`)
       .then((info)=> info.json())
-      .then(data => {
-         
-         comment.innerHTML =  ''
- 
-          comment.innerHTML= `<p><span class= "detail">Name:</span> ${data.name} <Br><span class= "detail">Email:</span> ${data.email}<Br> <span class= "detail">Review:</span> ${data.body}`     
-   
- 
- 
+        .then(data => { 
+             comment.innerHTML =  ''
+            comment.innerHTML= `<p><span class= "detail">Name:</span> ${data.name} <Br><span class= "detail">Email:</span> ${data.email}<Br> <span class= "detail">Review:</span> ${data.body}`     
       })
-     }
- 
- 
- 
+}
  let btnNext = document.getElementById('btn-next')
  btnNext.onclick = function() {
      postId++
@@ -354,26 +317,19 @@ const totalPrice = function () {
  }
  
  let btnBack = document.getElementById('btn-back')
- 
  btnBack.onclick = function() {
      postId -= 1
      if (postId === 0) {
          comment.innerHTML = '<span class= "detail">If you are thinking yet about buy our products, you can read the costumers reviews about their products and the purchasing process</span>'
-     
          btnBack.classList.add("div-hide")
- 
-     } else { 
-         
+      } else { 
          llamarApi()
      }
- 
  }
 
 
  
 let productContainer = document.getElementById('allproducts')
-
-
 let showProducts = function (array,title) {
     productContainer.innerHTML= ""
     let titulo = document.getElementById('title')
@@ -393,29 +349,19 @@ let showProducts = function (array,title) {
         } 
         itemContainer.appendChild(btn)
          }) 
-
-
-
 }
 
 let optionCF = document.getElementById('option-cf')
-
 optionCF.onclick = function (e) {
     e.preventDefault()
-
-
     showProducts( CFitems, "Crossfit Equipment")
 }
-
 let optionPt = document.getElementById('option-pt')
-
 optionPt.onclick = function (e) {
     e.preventDefault()
     showProducts( plates, "Plates")
 }
-
 let optionBb = document.getElementById('option-bb')
-
 optionBb.onclick = function (e) {
     e.preventDefault()
     showProducts( barbells, "Barbells")
@@ -474,12 +420,8 @@ btnSubmit.onclick = (e) => {
              userEmail.value =""
              userPhone.value =""
              alert("We will contact you")
-
         }
-        
-
     }
-
 }
 
 
